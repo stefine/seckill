@@ -1,0 +1,19 @@
+<table class="table">
+    <tr>
+        <!--设置表头-->
+        <th>商品名称</th>
+        <th>商品库存</th>
+        <th>秒杀开始时间</th>
+        <th>秒杀结束时间</th>
+        <th>操作</th>
+    </tr>
+    <!--使用ng-repeat，遍历所有的user-->
+    <tr ng-repeat="item in list">
+        <td>{{item.name}}</td>
+        <td>{{item.number}}</td>
+        <td>{{item.startTime}}</td>
+        <td>{{item.endTime}}</td>
+        <!-- 提供额外的视觉效果，标识一组按钮中的原始动作 -->
+        <td><button ng-click = showId(item.seckillId) type="button" class="btn btn-primary" >秒杀</button></td>
+    </tr>
+</table>

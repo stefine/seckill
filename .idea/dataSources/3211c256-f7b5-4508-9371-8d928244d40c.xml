@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="seckill@192.168.230.250">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="seckill">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="azkaban"/>
+    <schema id="4" parent="1" name="crxy"/>
+    <schema id="5" parent="1" name="imooc"/>
+    <schema id="6" parent="1" name="information_schema"/>
+    <schema id="7" parent="1" name="job11_hive"/>
+    <schema id="8" parent="1" name="mysql"/>
+    <table id="9" parent="2" name="seckill">
+      <Comment>ç§’æ&#x9d;€åº“å­˜è¡¨</Comment>
+    </table>
+    <table id="10" parent="2" name="success_killed">
+      <Comment>ç§’æ&#x9d;€æˆ&#x90;åŠŸæ˜Žç»†è¡¨</Comment>
+    </table>
+    <column id="11" parent="9" name="seckill_id">
+      <Position>1</Position>
+      <Comment>å•†å“&#x81;åº“å­˜id</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="12" parent="9" name="name">
+      <Position>2</Position>
+      <Comment>å•†å“&#x81;å&#x90;&#x8d;ç§°</Comment>
+      <DataType>varchar(120)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="13" parent="9" name="number">
+      <Position>3</Position>
+      <Comment>åº“å­˜æ•°é‡&#x8f;</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="14" parent="9" name="start_time">
+      <Position>4</Position>
+      <Comment>ç§’æ&#x9d;€å¼€å&#x90;¯æ—¶é—´</Comment>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="15" parent="9" name="end_time">
+      <Position>5</Position>
+      <Comment>ç§’æ&#x9d;€ç»“æ&#x9d;Ÿæ—¶é—´</Comment>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <column id="16" parent="9" name="create_time">
+      <Position>6</Position>
+      <Comment>åˆ›å»ºæ—¶é—´</Comment>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <index id="17" parent="9" name="idx_create_time">
+      <ColNames>create_time</ColNames>
+    </index>
+    <index id="18" parent="9" name="idx_end_time">
+      <ColNames>end_time</ColNames>
+    </index>
+    <index id="19" parent="9" name="idx_start_time">
+      <ColNames>start_time</ColNames>
+    </index>
+    <key id="20" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>seckill_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="21" parent="10" name="seckill_id">
+      <Position>1</Position>
+      <Comment>ç§’æ&#x9d;€å•†å“&#x81;id</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="10" name="user_phone">
+      <Position>2</Position>
+      <Comment>ç”¨æˆ·æ‰‹æœºå&#x8f;·</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="10" name="state">
+      <Position>3</Position>
+      <Comment>çŠ¶æ€&#x81;æ ‡ç¤º:-1:æ— æ•ˆ 0:æˆ&#x90;åŠŸ 1:å·²ä»˜æ¬¾ 2:å·²å&#x8f;‘è´§</Comment>
+      <DataType>tinyint(4)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;-1&apos;</DefaultExpression>
+    </column>
+    <column id="24" parent="10" name="create_time">
+      <Position>4</Position>
+      <Comment>åˆ›å»ºæ—¶é—´</Comment>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <index id="25" parent="10" name="idx_create_time">
+      <ColNames>create_time</ColNames>
+    </index>
+    <key id="26" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>seckill_id
+user_phone</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
